@@ -3,7 +3,6 @@ package com.example.tddtest1
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
-import kotlin.math.exp
 
 class TestMainTest {
 
@@ -22,5 +21,16 @@ class TestMainTest {
         val expect = 540
         println("[test_totalPriceSunny] actual= $actual")
         Assert.assertEquals(expect, actual)
+    }
+
+    @Test
+    fun test_insertOrder() {
+        val order = Order()
+        val userEmail = "xxx@gmail.com"
+        val mockEmailUtil = MockEmailUtil()
+
+        order.insertOrder(userEmail, 1, 600, mockEmailUtil)
+
+        Assert.assertEquals(userEmail, mockEmailUtil.receiveEmail)
     }
 }
