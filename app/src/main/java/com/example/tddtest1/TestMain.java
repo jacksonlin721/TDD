@@ -5,8 +5,14 @@ public class TestMain {
     public int result;
     ITest test;
 
+    public TestMain(){}
+
     public TestMain(ITest test) {
         this.test = test;
+    }
+
+    public int add(int a, int b) {
+        return a + b;
     }
 
     public void handleNumber(int input) {
